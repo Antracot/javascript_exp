@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js"></script>
+    <meta charset="UTF-8">
+    <title>my_game</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .ball{
+            background-color: lawngreen;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="ball" id="ball"></div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <script type="text/javascript">
+
+$(window).on('load', function() {
+
+        var html = document.documentElement;
+        var win_x = html.clientWidth;
+        var win_y = html.clientHeight;
+        console.log(win_y);
+
+        // var ballTimeLine = new TimelineMax({repeat:-1});
+
+        // ballTimeLine.to($('.ball'), 5,{y:win_y-50, ease:Linear.easeNone})
+        //             .to($('.ball'), 5,{x:win_x-50, ease:Linear.easeNone})
+        //             .to($('.ball'), 5,{y:0, ease:Linear.easeNone})
+        //             .to($('.ball'), 5,{x:0, ease:Linear.easeNone});
+
+        
+
+        $(window).on('mousemove', function(e){
+            TweenMax.to($('.ball'), .5,{x:e.pageX-25, y: e.pageY-25});
+            console.log(e.pageX);
+        });
+
+
+
+//        console.log(win_y);
+
+        // var c_x = 0; //ВИСОТА
+        // var c_y = 0; //ШИРИНА
+        // var pr_x = 0;
+        // var pr_y = 1;
+
+        // var myVar = setInterval(myTimer, 25);
+
+        // function myTimer() {
+        //     if(c_y<=0 && c_x<=0){
+        //         pr_x = 0;
+        //         pr_y = 1;
+        //         console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //     }
+            
+
+        //     if(c_y<=0 && c_x>=win_x-50){
+        //         pr_x = -1;
+        //         pr_y = 0;
+        //         console.log("??????????????????????????????????????????????????????????????");
+        //     }
+
+
+        //     if(c_y>win_y-60 && c_x<=0){
+        //         pr_y = 0;
+        //         pr_x = 1;
+        //         console.log("bottom right");
+        //     }
+            
+
+        //     if(c_y>=win_y-60 && c_x>=win_x-50){
+        //         pr_y = -1;
+        //         pr_x = 0;
+        //         console.log("yayayayayayayayayayayayayayayayayayayayayayayayayayayayayayayayayayaya");
+        //     }
+
+        //     c_x +=10*pr_x;
+        //     c_y +=10*pr_y;
+        //     document.getElementById('ball').style.cssText = 'top:' + c_y + 'px; left:' + c_x + 'px';
+        //     console.log(c_y);
+        //     // console.log(c_x);
+        // }
+//        $(document).ready(function(){
+//            $(document).mousemove(function(event){
+//                $("span").text(event.pageX + ", " + event.pageY);
+//            });
+//            console.log(event);
+//        });
+
+});
+    </script>
+</body>
+</html>
